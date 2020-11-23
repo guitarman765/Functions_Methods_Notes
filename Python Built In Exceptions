@@ -1,3 +1,43 @@
+
+  try:
+    regular code
+    if:
+       raise errortype ('what to raise')
+  
+    regular code
+    if:
+       raise errortype ('what to raise')
+  
+  except errortype as e:
+       exception code
+  
+  finally:
+  executes after both try and except no matter what (clean up code, closing files even with errors, etc)
+------------------------------------------------------------
+def function_example():
+    regular code 
+    if:
+        raise errortype ('what to raise')
+-----------------------------------------------------------
+CUSTOM EXCEPTION
+class LessThanZeroError(Exception):
+    def __init__(self, value):
+        self.value = value
+        
+if num < 0:
+    raise LessThanZeroError('num must be greater than 0')
+---------------------------------------------------------------------------
+      
+Any exception in a function immediatly causes exit and back to global scope script code
+
+good practice is to not use general catch all except blocks and write an except for each specific exception
+tuples can be used to specify exceptions to catch 
+  example - except (ValueError, TypeError)
+  
+custom exception names should end with Error
+
+
+
 ArithmeticError	Raised when an error occurs in numeric calculations
 AssertionError	Raised when an assert statement fails
 AttributeError	Raised when attribute reference or assignment fails
