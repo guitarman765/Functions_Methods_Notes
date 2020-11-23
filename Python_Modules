@@ -1,0 +1,23 @@
+filename end with .py or it cant be imported
+module_name item should match filename of the module without the .py
+case sensitive
+module required by another program - dependency
+file containing code passed to interpreter - script
+python code file that can be imported by a script - module
+
+load process
+    Checked if exists in sys.modules
+    if not module object is created
+    added to sys.modules
+    module code executes
+    added to importers namespace
+    
+    
+    FINDING MODULES
+first checks built in modules 
+if no matches moves to search directories of sys.path in sys module
+    directory of executing script
+    A list of directories specified by the environmental variable PYTHONPATH
+    directory of where python is installed
+    
+set the value of PYTHONPATH permanently through the control panel, or temporarily on a single instance of a command terminal (cmd.exe) using the command set PYTHONPATH="c:\dir1;c:\other\directory".
