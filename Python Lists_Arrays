@@ -1,11 +1,61 @@
 append()	Adds an element at the end of the list
+    list.append(elmnt)
+    elmnt - required - an element of any type (string, number, object, etc)
+    
 clear()	Removes all the elements from the list
+    list.clear()
+    
 copy()	Returns a copy of the list
+    list.copy()
+    
 count()	Returns the number of elements with the specified value
+    list.count(value)
+    value - required - any type (string, number, list, tuple, etc), the value to search for 
+    
 extend()	Add the elements of a list (or any iterable), to the end of the current list
+    list.extend(iterable)
+    iterable - required - any iterable (list, set, tuple, etc) 
+    
 index()	Returns the index of the first element with the specified value
+    list.index(elmnt)
+    elmnt - required - any type - element to search for
+
 insert()	Adds an element at the specified position
-pop()	Removes the element at the specified position
+    list.insert(pos, elmnt)
+    pos - required - number specifying which position to insert the value
+    elmnt - required - an element of any type
+
+pop()	Removes the element at the specified position and returns it
+    list.pop(pos)
+    pos - optional, position of element you want to remove
+    
 remove()	Removes the first item with the specified value
+     list.remove(elmnt)
+     elmnt - required - any type - element you want to remove
+     removes first occurence of the value
+     
 reverse()	Reverses the order of the list
+    list.reverse()
+    reverses the sorting order of the elements
+    
 sort()	Sorts the list
+    list.sort(reverse=True|False, key=myFunc)
+    reverse - optional - reverse = True will sort the list descending - default is reverse = false
+    key - optional - a function to specify the sorting criteria
+        def myFunc(e):
+        return len(e)
+        cars = ['Ford', 'Mitsubishi', 'BMW', 'VW']
+        cars.sort(key=myFunc)
+     
+# A function that returns the 'year' value:
+def myFunc(e):
+return e['year']
+
+cars = [
+{'car': 'Ford', 'year': 2005},
+{'car': 'Mitsubishi', 'year': 2000},
+{'car': 'BMW', 'year': 2019},
+{'car': 'VW', 'year': 2011}
+]
+cars.sort(key=myFunc)
+    
