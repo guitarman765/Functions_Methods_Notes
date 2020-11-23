@@ -1,11 +1,76 @@
 clear()	Removes all the elements from the dictionary
+    dictionary.clear()
+    
 copy()	Returns a copy of the dictionary
+    dictionary.copy()
+    
 fromkeys()	Returns a dictionary with the specified keys and value
+    dict.fromkeys(keys, value)
+    keys - required - an iterable specifying the keys of the new dictionary 
+    value - optional - the value for all keys - default is none
+    
 get()	Returns the value of the specified key
+    dictionary.get(keyname, value)
+    keyname - required - the keyname of the item you want to return the value from 
+    value - optional - a value to return if the specified key does not exist - default is None
+    
 items()	Returns a list containing a tuple for each key value pair
+    dictionary.items()
+    returns a view object 
+    the view object contains the key-value pairs of the dictionary as tuples in a list
+    
 keys()	Returns a list containing the dictionary's keys
+    dictionary.keys()
+    returns a view object - contains the keys of the dictionary as a list
+    view object will reflect any changs done to the dictionary
+        car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+       }
+       x = car.keys()
+       car["color"] = "white"
+       print(x)
+    
 pop()	Removes the element with the specified key
+    dictionary.pop(keyname, defaultvalue)
+    keyname - required - the keyname of the item you want to remove and return 
+    defaultvalue - optional - a value to return if the specified key does not exist
+        car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+        }
+        x = car.pop("model")
+        print(x)
+    
 popitem()	Removes the last inserted key-value pair
+    dictionary.popitem()
+    removes the item that was last inserted into the dictionary. in versions before 3.7
+    the popitem() method removed a random item
+    
 setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+    dictionary.setdefault(keyname, value)
+    keyname - required - the keyname of the item you want to return the value from 
+    value - optional - if the key exists, this parameter has no effect
+    if the key does not exist, this value becomes the key's value 
+    default value None
+        car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+        }
+        x = car.setdefault("model", "Bronco")
+        print(x)
+ 
 update()	Updates the dictionary with the specified key-value pairs
+    dictionary.update(iterable)
+    iterable - a dictionary or an iterable object with key value pairs, that will be inserted into the dictionary 
+    
 values()	Returns a list of all the values in the dictionary
+    dictionary.values()
+    returns a view object
+    values of dictionary are returned as a list
+    view object will reflect any changes done to the dictionary
+    
+    
