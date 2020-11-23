@@ -1,14 +1,86 @@
-capitalize()	Converts the first character to upper case
-casefold()	Converts string into lower case
-center()	Returns a centered string
-count()	Returns the number of times a specified value occurs in a string
-encode()	Returns an encoded version of the string
-endswith()	Returns true if the string ends with the specified value
-expandtabs()	Sets the tab size of the string
-find()	Searches the string for a specified value and returns the position of where it was found
-format()	Formats specified values in a string
-format_map()	Formats specified values in a string
-index()	Searches the string for a specified value and returns the position of where it was found
+capitalize() - Converts the first character to upper case
+  string.capitalize()
+  
+casefold() - Converts string into lower case
+    string.casefold()
+    This method is similar to the lower() method, but the casefold() method is stronger, more aggressive, meaning that it will convert more 
+    characters into lower case, and will find more matches when comparing two strings and both are converted using the casefold() method.
+    
+center() - Returns a centered string, 2nd argument isnt needed but deafults to spaces if not used. 
+    string.center(length, character)
+    length - required
+    character - nr, default spaces
+    
+count()	- Returns the number of times a specified value occurs in a string
+    string.count(value, start, end)
+    value - needed 
+    start - default is 0 
+    end - default is end of string
+
+encode() - Returns an encoded version of the string
+    string.encode(encoding=encoding, errors=errors)
+    encoding = optional, default is UTF-8 
+    errors - specifying error method 
+      legal values
+        'backslashreplace'	- uses a backslash instead of the character that could not be encoded
+        'ignore'	- ignores the characters that cannot be encoded
+        'namereplace'	- replaces the character with a text explaining the character
+        'strict'	- Default, raises an error on failure
+        'replace'	- replaces the character with a questionmark
+        'xmlcharrefreplace'	- replaces the character with an xml character
+      
+endswith() - Returns true if the string ends with the specified value
+    string.endswith(value, start, end)
+    
+expandtabs()	- Sets the tab size of the string
+    string.expandtabs(tabsize)
+    default tabsize is 8 
+    txt = "H\te\tl\tl\to"
+    print(txt.expandtab(#))
+   
+
+find()	- Searches the string for a specified value and returns the position of where it was found
+    string.find(value, start, end)
+    returns -1 if not found
+    almost the same as index(), index() raises and exception if the value is not found. 
+
+format()	- Formats specified values in a string
+    string.format(value1, value2...)
+        named index -  txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age = 36)
+        numbered index - txt2 = "My name is {0}, I'm {1}".format("John",36)
+        empty placeholders - txt3 = "My name is {}, I'm {}".format("John",36)
+    inside of placeholders - add a formatting type.
+      :< - left aligns the result (within the available space)
+      :> - right align results (within available space)
+      :^ - Center align the result 
+      := - places the sign to the leftmost position 
+      :+ - use a plus sign to indicate if the result is positive or negative
+      :- - use a minus sign for negative values only
+      :  - use a space to insert an extra space before positive numbers (and a minus sign before      negative numbers)
+      :, - use a comma as a thousand separator
+      :_ - use an underscore as a thousand separator
+      :b - binary format
+      :c - converts the value into the corresponding unicode character
+      :d - decimal format 
+      :e - scientific format, with a lowercase e
+      :E - scientific format with an upper case E
+      :f - fix point number format 
+      :F - fix point number format, in uppercase format (show inf and nan as INF and NAN)
+      :g - general format
+      :G - general format (using a upper case E for scientific notation)
+      :o - octal format 
+      :x - hex format lower case
+      :X - hex format upper case
+      :n - number format 
+      :% - percentage format 
+         
+*** format_map()	- Formats specified values in a string
+
+index()	- Searches the string for a specified value and returns the position of where it was found
+    string.index(value, start, end)
+    The index() method raises an exception if the value is not found.
+    The index() method is almost the same as the find() method, the only difference is that the find() method returns -1 if the value is not found.  
+
 isalnum()	Returns True if all characters in the string are alphanumeric
 isalpha()	Returns True if all characters in the string are in the alphabet
 isdecimal()	Returns True if all characters in the string are decimals
