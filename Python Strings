@@ -142,24 +142,133 @@ join()	- Joins the elements of an iterable to the end of the string
 
         x = mySeparator.join(myDict)
     
-ljust()	Returns a left justified version of the string
-lower()	Converts a string into lower case
-lstrip()	Returns a left trim version of the string
-maketrans()	Returns a translation table to be used in translations
-partition()	Returns a tuple where the string is parted into three parts
-replace()	Returns a string where a specified value is replaced with a specified value
-rfind()	Searches the string for a specified value and returns the last position of where it was found
-rindex()	Searches the string for a specified value and returns the last position of where it was found
-rjust()	Returns a right justified version of the string
-rpartition()	Returns a tuple where the string is parted into three parts
-rsplit()	Splits the string at the specified separator, and returns a list
-rstrip()	Returns a right trim version of the string
-split()	Splits the string at the specified separator, and returns a list
-splitlines()	Splits the string at line breaks and returns a list
-startswith()	Returns true if the string starts with the specified value
-strip()	Returns a trimmed version of the string
-swapcase()	Swaps cases, lower case becomes upper case and vice versa
-title()	Converts the first character of each word to upper case
-translate()	Returns a translated string
-upper()	Converts a string into upper case
-zfill()	Fills the string with a specified number of 0 values at the beginning
+ljust()	- Returns a left justified version of the string
+    string.ljust(length, character)
+    length - required - the length of the returned string
+    character - optional - character to fill the missing space (to the right of the string)
+        default is space
+
+lower()	- Converts a string into lower case
+    string.lower()
+    symbols and numbers are ignored
+    
+lstrip()	- Returns a left trim version of the string
+    string.lstrip(characters)
+    x = txt.lstrip(",.asw")
+    default is spaces
+
+maketrans()	- Returns a translation table to be used in translations
+    string.maketrans(x, y, z)
+    x - required - if only one parameter - has to be a dictionary describing how to perform the replace
+                   if two or more parameters - has to be a string specifying the characters you want to replace
+    y - optional - string with the same length as x, each character in the first parameter will be replaced with the corresponding character in this string
+    z - optional - a string describing which characters to remove from the original string.
+        txt = "Hi Sam!";
+        x = "mSa";
+        y = "eJo";
+        mytable = txt.maketrans(x, y);
+        print(txt.translate(mytable));
+            txt = "Good night Sam!";
+            x = "mSa";
+            y = "eJo";
+            z = "odnght";
+            mytable = txt.maketrans(x, y, z);
+            print(txt.translate(mytable));
+        The maketrans() method itself returns a dictionary describing each replacement, in unicode:
+            txt = "Good night Sam!";
+            x = "mSa";
+            y = "eJo";
+            z = "odnght";
+            print(txt.maketrans(x, y, z));
+        
+partition()	- Returns a tuple where the string is parted into three parts
+    string.partition(value)
+    1st - before the specified string
+    2nd - contains the specified string
+    3rd - after the string
+        if value is not found, returns a touple cotaining 1 the whole string, 2 - empty string, 3 - empty string
+        
+replace()	- Returns a string where a specified value is replaced with a specified value
+    string.replace(oldvalue, newvalue, count)
+    oldvalue - required - string to search for
+    newvalue - required - straing to replace old with 
+    count - optional - a number specifying how many occurences of the old value you want to duplicate. 
+        default is all occurences
+
+rfind()	- Searches the string for a specified value and returns the last position of where it was found
+    string.rfind(value, start, end)
+    finds the last occurence of specified value
+    returns -1 if not found
+    almost the same as rindex() but does not raise an error
+        value - required, value to search for
+        start - where to start, default is 0 
+        end - optional, where to end the search, default is end
+
+rindex() - Searches the string for a specified value and returns the last position of where it was found
+    same as rfind() but raises an error when value is not found
+
+rjust()	- Returns a right justified version of the string
+    string.rjust(length, character)
+    length - required - length of the returned string
+    character - optional - fills missing space to the left of the string, default is space
+
+rpartition()	- Returns a tuple where the string is parted into three parts
+    last occurence of the value
+    1 - everything before the match 
+    2 - the match
+    3 - everything after the match
+
+rsplit()	- Splits the string at the specified separator, and returns a list
+    string.rsplit(separator, maxsplit)
+    separator - optional - default is whitespace separator
+    maxsplit - optional - how many splits to do, default is -1 which is all occurences
+        # setting the maxsplit parameter to 1, will return a list with 2 elements!
+        x = txt.rsplit(", ", 1)
+
+rstrip()	- Returns a right trim version of the string
+    string.rstrip(characters)
+    default is spaces
+
+split()	- Splits the string at the specified separator, and returns a list
+    string.split(separator, maxsplit)
+    separator - optional - default is whitespace
+    maxsplit - optional - default is -1 which is all occurences
+
+splitlines()	- Splits the string at line breaks and returns a list
+    string.splitlines(keeplinebreaks)
+    keeplinebreaks - optional - specifies if linebreaks should be included (True) or not included (False)
+    default is false
+
+startswith()	- Returns true if the string starts with the specified value
+    string.startswith(value, start, end)
+    value - required - value to check if the string starts with
+    start - which position to start the search
+    end - optional an integer specifying which position to end the search
+
+strip()	- Returns a trimmed version of the string
+    string.strip(characters)
+    characters - optional - characters to remove from the leading/trailing edges 
+    default is spaces
+
+swapcase()	- Swaps cases, lower case becomes upper case and vice versa
+    string.swapcase()
+
+title()	- Converts the first character of each word to upper case
+    string.title()
+
+translate()	- Returns a translated string
+    string.translate(table)
+    table - required - either a dictionary or a mapping table describing how to perform the replace
+    use maketrans() method to create a mapping table
+    
+upper()	- Converts a string into upper case
+    string.upper()
+    symbols and numbers are ignored
+
+zfill()	- Fills the string with a specified number of 0 values at the beginning
+    string.zfill(len)
+    len - required - number specifying the position of the element you want to remove
+        if the value of the len parameter is less than the length of the string, no filling is done. 
+        
+    
+
