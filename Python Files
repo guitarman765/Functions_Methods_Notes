@@ -1,16 +1,99 @@
-close()	Closes the file
-detach()	Returns the separated raw stream from the buffer
-fileno()	Returns a number that represents the stream, from the operating system's perspective
-flush()	Flushes the internal buffer
-isatty()	Returns whether the file stream is interactive or not
-read()	Returns the file content
-readable()	Returns whether the file stream can be read or not
-readline()	Returns one line from the file
-readlines()	Returns a list of lines from the file
-seek()	Change the file position
-seekable()	Returns whether the file allows us to change the file position
-tell()	Returns the current file position
-truncate()	Resizes the file to a specified size
-writable()	Returns whether the file can be written to or not
-write()	Writes the specified string to the file
-writelines()	Writes a list of strings to the file
+close()	- Closes the file
+    file.close()
+    always close your files, due to bufferingm changes made to a file may not show up until you close it
+    
+***detach()	Returns the separated raw stream from the buffer
+
+fileno()	- Returns a number that represents the stream, from the operating system's perspective
+    file.fileno()
+    returns the file descriptor of the stream as a number. 
+    an error will occur if the operator system does not use a file descriptor
+
+flush()	- Flushes the internal buffer
+    file.flush()
+        f = open("myfile.txt", "a")
+        f.write("Now the file has one more line!")
+        f.flush()
+        f.write("...and another one!")
+
+isatty()	- Returns whether the file stream is interactive or not
+    file.isatty()
+    The isatty() method returns True if the file stream is interactive, 
+    example: connected to a terminal device.
+        f = open("demofile.txt", "r")
+        print(f.isatty())
+
+read() -	Returns the file content
+    file.read()
+    size - optional - the number of bytes to return
+    default is -1 which means the whole file
+
+readable()	- Returns whether the file stream can be read or not
+    file.readable()
+    true if file is readable, false if not
+
+readline()	- Returns one line from the file
+    file.readline(size)
+    size - optional - number of bytes to return from the line, default is - which means the whole line
+        f = open("demofile.txt", "r")
+        print(f.readline())
+        print(f.readline())
+
+readlines()	- Returns a list of lines from the file
+    file.readlines(hint)
+    hint - optional - if the number of bytes returned exceeds the hint number, no more lines will be returned
+    default is -1 which means all lines will be returned
+        The readlines() method returns a list containing each line in the file as a list item.
+
+seek()	- Change the file position
+    file.seek(offset)
+    offset - required - number representing the position to set the current file stream position 
+        The seek() method sets the current file position in a file stream.
+        The seek() method also returns the new postion.
+            f = open("demofile.txt", "r")
+            f.seek(4)
+            print(f.readline())
+
+seekable()	- Returns whether the file allows us to change the file position
+    file.seekable()
+    A file is seekable if it allows access to the file stream, like the seek() method.
+    
+tell()	- Returns the current file position
+    file.tell()
+    returns current file position in the file stream
+
+truncate()	- Resizes the file to a specified size
+    file.truncate(size)
+    size - optional - size of the file (in bytes) after the  truncate. 
+    default None, which means the current file stream position. 
+
+writable()	- Returns whether the file can be written to or not
+    file.writable()
+    A file is writable if it is opened using "a" for append or "w" for write.
+    
+write()	- Writes the specified string to the file
+    file.write(byte)
+    byte - the text or byte object that will be inserted
+        writes a specified text to the file
+        where the specified text will be inserted depends on the file mode and stream position 
+            "a" - the text will be inserted at the current file stream position. default at the end of the file
+            "w" - the file will be emptied before the text will be inserted at the current file stream position, default 0 
+
+writelines()	- Writes a list of strings to the file
+    file.writelines(list)
+    list - the list of texts or byte objects that will be inserted
+        The writelines() method writes the items of a list to the file.
+        Where the texts will be inserted depends on the file mode and stream position.
+        "a":  The texts will be inserted at the current file stream position, default at the end of the file.
+        "w": The file will be emptied before the texts will be inserted at the current file stream position, default 0.
+             f = open("demofile3.txt", "a")
+             f.writelines(["See you soon!", "Over and out."])
+             f.close()
+
+             #open and read the file after the appending:
+             f = open("demofile3.txt", "r")
+             print(f.read())
+    
+    
+    
+    
