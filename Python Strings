@@ -81,18 +81,67 @@ index()	- Searches the string for a specified value and returns the position of 
     The index() method raises an exception if the value is not found.
     The index() method is almost the same as the find() method, the only difference is that the find() method returns -1 if the value is not found.  
 
-isalnum()	Returns True if all characters in the string are alphanumeric
-isalpha()	Returns True if all characters in the string are in the alphabet
-isdecimal()	Returns True if all characters in the string are decimals
-isdigit()	Returns True if all characters in the string are digits
-isidentifier()	Returns True if the string is an identifier
-islower()	Returns True if all characters in the string are lower case
-isnumeric()	Returns True if all characters in the string are numeric
-isprintable()	Returns True if all characters in the string are printable
-isspace()	Returns True if all characters in the string are whitespaces
-istitle()	Returns True if the string follows the rules of a title
-isupper()	Returns True if all characters in the string are upper case
-join()	Joins the elements of an iterable to the end of the string
+isalnum()	- Returns True if all characters in the string are alphanumeric.
+    string.isalnum()
+    a-z 
+    0-9
+    not alphanumeric - spaces, !#%&? etc
+
+isalpha()	- Returns True if all characters in the string are in the alphabet
+    string.isalpha()
+    a-z
+    
+isdecimal()	- Returns True if all characters in the string are decimals
+    string.isdecimal()
+    0-9
+    used on unicode objects
+        a = "\u0030" #unicode for 0
+        b = "\u0047" #unicode for G
+
+ 
+isdigit()	- Returns True if all characters in the string are digits
+    string.isdigit()
+    exponents are also considereddigits
+    
+isidentifier()	- Returns True if the string is an identifier
+    string.isidentifier()
+    valid identifier if 
+        a-z
+        0-9
+        underscores
+        cannot start with a number or contain any spaces
+
+islower()	- Returns True if all characters in the string are lower case
+    string.islower()
+    numbers, symbols, spaces are not checked, only alphabet characters
+    
+isnumeric()	- Returns True if all characters in the string are numeric
+    string.isnumeric()
+    0-9 only
+    exponents are also considered to be numeric
+
+isprintable()	- Returns True if all characters in the string are printable
+    string.isprintable()
+    non printable - carriage returns and line feed
+    
+isspace()	- Returns True if all characters in the string are whitespaces
+    string.isspace()
+
+istitle()	- Returns True if the string follows the rules of a title
+    string.istitle()
+    all words in a text start with an uppercase letter AND the rest of the word is lowercase
+
+isupper()	- Returns True if all characters in the string are upper case
+    string.isupper()
+    numbers, symbols and spaces are not checked, only alphabet characters
+    
+join()	- Joins the elements of an iterable to the end of the string
+    string.join(iterable)
+        myDict = {"name": "John", "country": "Norway"}
+        mySeparator = "TEST"
+
+        x = mySeparator.join(myDict)
+    
 ljust()	Returns a left justified version of the string
 lower()	Converts a string into lower case
 lstrip()	Returns a left trim version of the string
