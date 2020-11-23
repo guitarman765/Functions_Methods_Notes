@@ -1,0 +1,36 @@
+try:
+  regular code
+except:
+  exception code
+ finally:
+  executes after both try and except. 
+------------------------------------------------------------
+good practice is to not use general catch all except blocks and write an except for each specific exception
+tuples can be used to specify exceptions to catch 
+  example - except (ValueError, TypeError)
+
+ArithmeticError - 
+  OverFlowError - 
+  ZeroDivisionError - 
+  FloatingPointError -
+BufferError - raised when a buffer related operation cannot be performed. 
+LookupError - exceptions raised when key or index used on a mapping or sequence is invalid
+  IndexError - 
+  KeyError - 
+AssertionError - when an assert statement fails
+AttributeError - when an attribute reference or assignment fails
+EOFError - when input() function hits an end-of-file condition
+FloatingPointError - not currently used
+ImportError - when import cant import or from import list has a name that cant be found
+ModuleNotFoundError - raised by import when a module cannot be located
+IndexError - sequence subscript is out of range. 
+KeyError - dictionary key is not found in the set of existing keys
+MemoryError - when an operation runs out of memory
+NameError - local or global name is not found. 
+NotImplementedError - 
+
+
+
+
+
+  
