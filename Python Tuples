@@ -1,2 +1,10 @@
 count()	Returns the number of times a specified value occurs in a tuple
+    tuple.count(value)
+    value - required - the item to search for
+
 index()	Searches the tuple for a specified value and returns the position of where it was found
+    tuple.index(value)
+    value - required - the item to search for
+    finds first occurence of specified value
+    raises an exception if the value is not found
+    
